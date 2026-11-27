@@ -157,6 +157,14 @@
   "signals": [
     {"id": "RX_DEBUG_700_10F6_B0", "path": "Engine.Research", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw 700/2210F6 byte 0", "description": "Engine oil temperature is the source hypothesis. ScanGauge PT-003 uses a C3 filter. The raw view exposes the first post-echo byte for debugging. The oil-temperature field offset and scale need a matched RX reply."}
   ]},
+{ "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "112C"}, "freq": 30, "filter": { "years": [2020] },
+  "signals": [
+    {"id": "RX_DEBUG_700_112C_B0", "path": "Engine.Research", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw 700/22112C byte 0", "description": "Lexus ES injection volume target candidate. Compare the full reply with the RX injection reads during load changes."}
+  ]},
+{ "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "112F"}, "freq": 30, "filter": { "years": [2020] },
+  "signals": [
+    {"id": "RX_DEBUG_700_112F_B0", "path": "Engine.Research", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw 700/22112F byte 0", "description": "Lexus ES total injection volume candidate. Determine the data width and offset from RX replies and injection references."}
+  ]},
 { "hdr": "700", "rax": "708", "cmd": {"22": "15FA"}, "freq": 1, "filter": { "from": 2016 }, "dbgfilter": { "to": 2016, "years": [2018, 2019, 2021], "from": 2023 },
   "signals": [
     {"id": "RX_ALT_DUTY_CYCLE", "path": "Engine", "fmt": { "len": 16, "max": 399, "div": 164, "unit": "percent" }, "name": "Alternator output duty cycle"}
@@ -185,9 +193,17 @@
   "signals": [
     {"id": "RX_CAT_T_BANK_1_SENSOR_1", "path": "Engine", "fmt": { "len": 16, "max": 6513.5, "min": -40, "div": 10, "add": -40, "unit": "celsius" }, "name": "Catalyst temperature, bank 1 sensor 1"}
   ]},
+{ "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "1F3D"}, "freq": 30, "filter": { "years": [2020] },
+  "signals": [
+    {"id": "RX_DEBUG_700_1F3D_B0", "path": "Emissions.Research", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw 700/221F3D byte 0", "description": "Lexus ES bank 2 catalyst temperature candidate. Compare the complete reply with bank 1 read 221F3C during warmup."}
+  ]},
 { "hdr": "700", "rax": "708", "cmd": {"22": "1F3E"}, "freq": 1, "filter": { "from": 2016 }, "dbgfilter": { "to": 2016, "years": [2018, 2019, 2021, 2024], "from": 2027 },
   "signals": [
     {"id": "RX_CAT_T_BANK_1_SENSOR_2", "path": "Engine", "fmt": { "len": 16, "max": 6513.5, "min": -40, "div": 10, "add": -40, "unit": "celsius" }, "name": "Catalyst temperature, bank 1 sensor 2"}
+  ]},
+{ "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "1F3F"}, "freq": 30, "filter": { "years": [2020] },
+  "signals": [
+    {"id": "RX_DEBUG_700_1F3F_B0", "path": "Emissions.Research", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw 700/221F3F byte 0", "description": "Lexus ES bank 2 downstream catalyst temperature candidate. Compare the complete reply with bank 1 read 221F3E during warmup."}
   ]},
 { "hdr": "700", "rax": "708", "cmd": {"22": "1F46"}, "freq": 1, "filter": { "from": 2016 }, "dbgfilter": { "to": 2019, "years": [2021, 2024], "from": 2027 },
   "signals": [
@@ -202,6 +218,10 @@
     {"id": "RX_HFP_TARGET",        "path": "Fuel", "fmt": {"bix": 8,  "len": 16, "max": 655350, "mul": 10, "unit": "kilopascal" }, "name": "High fuel pressure, target"},
     {"id": "RX_HFP_ACTUAL",        "path": "Fuel", "fmt": {"bix": 24, "len": 16, "max": 655350, "mul": 10, "unit": "kilopascal" }, "name": "High fuel pressure, actual"},
     {"id": "RX_LOW_FUEL_PRESSURE", "path": "Fuel", "fmt": {"bix": 64, "len": 16, "max": 655350, "mul": 10, "unit": "kilopascal" }, "name": "Low fuel pressure"}
+  ]},
+{ "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "1F77"}, "freq": 30, "filter": { "years": [2020] },
+  "signals": [
+    {"id": "RX_DEBUG_700_1F77_B0", "path": "Engine.Research", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw 700/221F77 byte 0", "description": "Lexus ES intake air temperature candidate. Compare all data bytes with 22107B and standard PID 0F."}
   ]},
 { "hdr": "700", "rax": "708", "cmd": {"22": "2827"}, "freq": 1, "filter": { "from": 2023 }, "dbgfilter": { "to": 2024, "from": 2027 },
   "signals": [
@@ -232,9 +252,21 @@
         }}
     }
   ]},
+{ "hdr": "701", "rax": "709", "dbg": true, "cmd": {"22": "1618"}, "freq": 30, "filter": { "years": [2020] },
+  "signals": [
+    {"id": "RX_DEBUG_701_1618_B0", "path": "Transmission.Research", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw 701/221618 byte 0", "description": "Lexus NX transmission output speed candidate. Compare the complete reply with vehicle speed and gear."}
+  ]},
+{ "hdr": "701", "rax": "709", "dbg": true, "cmd": {"22": "161A"}, "freq": 30, "filter": { "years": [2020] },
+  "signals": [
+    {"id": "RX_DEBUG_701_161A_B0", "path": "Transmission.Research", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw 701/22161A byte 0", "description": "Lexus NX transmission turbine speed candidate. Compare the complete reply with RPM across lockup states."}
+  ]},
 { "hdr": "701", "rax": "709", "cmd": {"22": "1620"}, "freq": 1, "filter": { "from": 2016 }, "dbgfilter": { "to": 2016, "years": [2018, 2019, 2021], "from": 2023 },
   "signals": [
     {"id": "RX_LOCK_UP_STATE", "path": "Engine", "fmt": {"bix": 7, "len": 1, "max": 1, "unit": "offon" }, "name": "Lock up state"}
+  ]},
+{ "hdr": "701", "rax": "709", "dbg": true, "cmd": {"22": "1622"}, "freq": 30, "filter": { "years": [2020] },
+  "signals": [
+    {"id": "RX_DEBUG_701_1622_B0", "path": "Transmission.Research", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw 701/221622 byte 0", "description": "Lexus NX transmission shift ratio candidate. Compare the full reply across shifts and alongside input and output speed readings."}
   ]},
 { "hdr": "701", "rax": "709", "cmd": {"22": "1627"}, "freq": 1, "filter": { "from": 2016 }, "dbgfilter": { "to": 2016, "years": [2018, 2019, 2021], "from": 2024 },
   "signals": [
@@ -247,6 +279,10 @@
 { "hdr": "701", "rax": "709", "dbg": true, "cmd": {"22": "1AC0"}, "freq": 30, "filter": { "years": [2020] },
   "signals": [
     {"id": "RX_DEBUG_701_1AC0_B0", "path": "Transmission.Research", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw 701/221AC0 byte 0", "description": "Torque converter temperature is the source hypothesis. ScanGauge PT-002 lists this request on 701 and also documents a 700 variant. Compare the 709 reply with pan temperature and converter lockup state to distinguish the quantities."}
+  ]},
+{ "hdr": "780", "rax": "788", "dbg": true, "cmd": {"21": "04"}, "freq": 30, "filter": { "years": [2020] },
+  "signals": [
+    {"id": "RX_DEBUG_780_04_B3", "path": "Seatbelts.Research", "fmt": {"bix": 24, "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw 780/2104 byte 3", "description": "Legacy RX 350 buckle status candidate. Byte 3 varies in RX replies. The donor left-side field exceeds the observed four-byte payload."}
   ]},
 { "hdr": "7B0", "rax": "7B8", "cmd": {"21": "03"}, "freq": 0.25, "dbgfilter": { "to": 2005, "years": [2007, 2008, 2009, 2011, 2012, 2014, 2016, 2018, 2019, 2020, 2021], "from": 2023 },
   "signals": [
@@ -355,6 +391,46 @@
     {"id": "RX_ACCUMULATOR_OPEN",       "path": "Engine",      "fmt": {"bix": 16, "len": 1, "max": 1, "unit": "noyes" }, "name": "Accumulator open"},
     {"id": "RX_HV_COMM_OPEN",           "path": "Engine",      "fmt": {"bix": 17, "len": 1, "max": 1, "unit": "noyes" }, "name": "Hydraulic valve, communication open"}
   ]},
+{ "hdr": "7B0", "rax": "7B8", "dbg": true, "cmd": {"22": "1006"}, "freq": 30, "filter": { "years": [2020] },
+  "signals": [
+    {"id": "RX_DEBUG_7B0_1006_B0", "path": "Brakes.Research", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw 7B0/221006 byte 0", "description": "Legacy RX 350 master cylinder sensor temperature candidate. RX replies have two data bytes. Review their layout and variation before decoding."}
+  ]},
+{ "hdr": "7B0", "rax": "7B8", "fcm1": true, "dbg": true, "cmd": {"22": "1045"}, "freq": 30, "filter": { "years": [2020] },
+  "signals": [
+    {"id": "RX_DEBUG_7B0_1045_B0", "path": "Brakes.Research", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw 7B0/221045 byte 0", "description": "Lexus NX parking brake status candidate. Compare the complete reply with the RX parking brake read at 7D0."}
+  ]},
+{ "hdr": "7B0", "rax": "7B8", "fcm1": true, "dbg": true, "cmd": {"22": "104C"}, "freq": 30, "filter": { "years": [2020] },
+  "signals": [
+    {"id": "RX_DEBUG_7B0_104C_B0", "path": "Brakes.Research", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw 7B0/22104C byte 0", "description": "Lexus NX brake pedal stroke candidate. Compare the complete reply across observed pedal states."}
+  ]},
+{ "hdr": "7C0", "rax": "7C8", "dbg": true, "cmd": {"21": "12"}, "freq": 30, "filter": { "years": [2020] },
+  "signals": [
+    {"id": "RX_DEBUG_7C0_12_B1", "path": "Details.Research", "fmt": {"bix": 8, "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw 7C0/2112 byte 1", "description": "Legacy RX 350 cluster status candidate. Byte 1 contains two donor bitfield hypotheses. Compare the complete reply with known state transitions."}
+  ]},
+{ "hdr": "7C0", "rax": "7C8", "dbg": true, "cmd": {"21": "13"}, "freq": 30, "filter": { "years": [2020] },
+  "signals": [
+    {"id": "RX_DEBUG_7C0_13_B0", "path": "Battery.Research", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw 7C0/2113 byte 0", "description": "Legacy RX 350 cluster voltage candidate. Compare the raw value against the existing RX battery voltage read."}
+  ]},
+{ "hdr": "7C0", "rax": "7C8", "dbg": true, "cmd": {"21": "21"}, "freq": 30, "filter": { "years": [2020] },
+  "signals": [
+    {"id": "RX_DEBUG_7C0_21_B0", "path": "Movement.Research", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw 7C0/2121 byte 0", "description": "Legacy RX 350 cluster speed candidate. Compare its raw value with the standard vehicle speed read."}
+  ]},
+{ "hdr": "7C0", "rax": "7C8", "dbg": true, "cmd": {"21": "23"}, "freq": 30, "filter": { "years": [2020] },
+  "signals": [
+    {"id": "RX_DEBUG_7C0_23_B0", "path": "Engine.Research", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw 7C0/2123 byte 0", "description": "Legacy RX 350 cluster coolant temperature candidate. Compare its raw value with the ECM and climate coolant readings."}
+  ]},
+{ "hdr": "7C0", "rax": "7C8", "dbg": true, "cmd": {"21": "29"}, "freq": 30, "filter": { "years": [2020] },
+  "signals": [
+    {"id": "RX_DEBUG_7C0_29_B0", "path": "Fuel.Research", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw 7C0/2129 byte 0", "description": "Legacy RX 350 cluster fuel quantity candidate. Check competing scale and unit conventions against fuel level over time."}
+  ]},
+{ "hdr": "7C0", "rax": "7C8", "dbg": true, "cmd": {"21": "A1"}, "freq": 30, "filter": { "years": [2020] },
+  "signals": [
+    {"id": "RX_DEBUG_7C0_A1_B0", "path": "Keys.Research", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw 7C0/21A1 byte 0", "description": "Legacy RX 350 key reminder candidate. Look for reproducible byte changes around a known reminder event."}
+  ]},
+{ "hdr": "7C0", "rax": "7C8", "dbg": true, "cmd": {"21": "A7"}, "freq": 30, "filter": { "years": [2020] },
+  "signals": [
+    {"id": "RX_DEBUG_7C0_A7_B0", "path": "Seatbelts.Research", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw 7C0/21A7 byte 0", "description": "Legacy RX 350 seat belt reminder candidate. Compare whole-byte and bitfield interpretations across known buckle states."}
+  ]},
 { "hdr": "7C4", "cmd": {"21": "43"}, "freq": 1, "filter": { "from": 2009 }, "dbgfilter": { "to": 2009, "years": [2011, 2012, 2014, 2016, 2018, 2019, 2021], "from": 2023 },
   "signals": [
     {"id": "RX_AIR_OUTLET_SERVO_PULSE_D",      "path": "Climate", "fmt": {          "len": 8, "max": 255, "unit": "scalar" }, "name": "Air outlet servo pulse, driver"},
@@ -397,6 +473,10 @@
   "signals": [
     {"id": "RX_ADJUSTED_AMBIENT_T", "path": "Climate", "fmt": { "len": 8, "max": 50.8, "min": -30.8, "mul": 81.6, "div": 255, "add": -30.8, "unit": "celsius" }, "name": "Adjusted ambient temperature"}
   ]},
+{ "hdr": "7C4", "rax": "7CC", "dbg": true, "cmd": {"21": "41"}, "freq": 30, "filter": { "years": [2020] },
+  "signals": [
+    {"id": "RX_DEBUG_7C4_41_B0", "path": "Climate.Research", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw 7C4/2141 byte 0", "description": "Lexus UX air mix servo target and actual candidate. Compare the complete reply with observed climate servo transitions."}
+  ]},
 { "hdr": "7C4", "rax": "7CC", "cmd": {"21": "4B"}, "freq": 1, "filter": { "from": 2009 }, "dbgfilter": { "to": 2009, "years": [2011, 2012, 2014, 2016, 2018, 2019, 2021], "from": 2023 },
   "signals": [
     {"id": "RX_EVAP_FIN_THERMISTOR", "path": "Climate", "fmt": { "len": 8, "max": 59.55, "min": -29.7, "mul": 89.25, "div": 255, "add": -29.7, "unit": "celsius" }, "name": "Evaporator fin thermistor"}
@@ -404,6 +484,22 @@
 { "hdr": "7C4", "rax": "7CC", "cmd": {"21": "53"}, "freq": 1, "filter": { "from": 2009 }, "dbgfilter": { "to": 2009, "years": [2011, 2012, 2014, 2016, 2018, 2019, 2021], "from": 2023 },
   "signals": [
     {"id": "RX_REGULATOR_P", "path": "Engine", "fmt": { "len": 8, "max": 3294, "min": -456.68, "mul": 375105, "div": 25500, "add": -456.68, "unit": "kilopascal" }, "name": "Regulator pressure"}
+  ]},
+{ "hdr": "7C4", "rax": "7CC", "fcm1": true, "dbg": true, "cmd": {"22": "1001"}, "freq": 30, "filter": { "years": [2020] },
+  "signals": [
+    {"id": "RX_DEBUG_7C4_1001_B0", "path": "Climate.Research", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw 7C4/221001 byte 0", "description": "Lexus NX cabin temperature candidate. Compare the complete reply with the RX cabin temperature read 2121."}
+  ]},
+{ "hdr": "7C4", "rax": "7CC", "fcm1": true, "dbg": true, "cmd": {"22": "1002"}, "freq": 30, "filter": { "years": [2020] },
+  "signals": [
+    {"id": "RX_DEBUG_7C4_1002_B0", "path": "Climate.Research", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw 7C4/221002 byte 0", "description": "Lexus NX ambient temperature candidate. Compare the complete reply with the RX climate ambient temperature read 2122."}
+  ]},
+{ "hdr": "7C4", "rax": "7CC", "fcm1": true, "dbg": true, "cmd": {"22": "1036"}, "freq": 30, "filter": { "years": [2020] },
+  "signals": [
+    {"id": "RX_DEBUG_7C4_1036_B0", "path": "Climate.Research", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw 7C4/221036 byte 0", "description": "Lexus NX climate setpoint code candidate. Compare the complete reply with known changes in the displayed climate setpoint."}
+  ]},
+{ "hdr": "7C4", "rax": "7CC", "fcm1": true, "dbg": true, "cmd": {"22": "2801"}, "freq": 30, "filter": { "years": [2020] },
+  "signals": [
+    {"id": "RX_DEBUG_7C4_2801_B0", "path": "Climate.Research", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw 7C4/222801 byte 0", "description": "Lexus NX blower level candidate. Compare the complete reply with the RX blower level read 213C."}
   ]},
 { "hdr": "7D0", "rax": "7D8", "cmd": {"21": "62"}, "freq": 1, "filter": { "from": 2011 }, "dbgfilter": { "to": 2012, "years": [2014, 2016, 2018, 2019, 2021], "from": 2023 },
   "signals": [
