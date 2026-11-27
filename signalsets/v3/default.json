@@ -153,6 +153,10 @@
   "signals": [
     {"id": "RX_LFPS", "path": "Fuel", "fmt": { "len": 16, "max": 3276, "min": -3276, "div": 10, "sign": true, "unit": "kilopascal" }, "name": "Low fuel pressure sensor"}
   ]},
+{ "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "10F6"}, "freq": 30, "filter": { "years": [2020] },
+  "signals": [
+    {"id": "RX_DEBUG_700_10F6_B0", "path": "Engine.Research", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw 700/2210F6 byte 0", "description": "Engine oil temperature is the source hypothesis. ScanGauge PT-003 uses a C3 filter. The raw view exposes the first post-echo byte for debugging. The oil-temperature field offset and scale need a matched RX reply."}
+  ]},
 { "hdr": "700", "rax": "708", "cmd": {"22": "15FA"}, "freq": 1, "filter": { "from": 2016 }, "dbgfilter": { "to": 2016, "years": [2018, 2019, 2021], "from": 2023 },
   "signals": [
     {"id": "RX_ALT_DUTY_CYCLE", "path": "Engine", "fmt": { "len": 16, "max": 399, "div": 164, "unit": "percent" }, "name": "Alternator output duty cycle"}
@@ -168,6 +172,10 @@
 { "hdr": "700", "rax": "708", "cmd": {"22": "1627"}, "freq": 1, "filter": { "from": 2016 }, "dbgfilter": { "to": 2016, "years": [2018, 2019, 2021], "from": 2024 },
   "signals": [
     {"id": "RX_ATF_T_PAN_V3", "path": "Transmission", "fmt": { "len": 16, "max": 215, "min": -40, "div": 256, "add": -40, "unit": "celsius" }, "name": "Transmission fluid temperature, pan var.3", "suggestedMetric": "transmissionFluidTemperature"}
+  ]},
+{ "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "1AA0"}, "freq": 30, "filter": { "years": [2020] },
+  "signals": [
+    {"id": "RX_DEBUG_700_1AA0_B0", "path": "Transmission.Research", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw 700/221AA0 byte 0", "description": "Current gear is the source hypothesis. ScanGauge PT-004 supplies a current-gear recipe. Compare the complete reply with 221621 and the actual gear during shifts."}
   ]},
 { "hdr": "700", "rax": "708", "cmd": {"22": "1F2F"}, "freq": 1, "filter": { "from": 2016 }, "dbgfilter": { "to": 2019, "years": [2021], "from": 2023 },
   "signals": [
@@ -211,6 +219,10 @@
   "signals": [
     {"id": "RX_EOP_CONTROL_VALVE", "path": "Engine", "fmt": { "len": 16, "max": 4999.9207, "mul": 0.0762939, "unit": "milliamps" }, "name": "Engine oil pressure control valve"}
   ]},
+{ "hdr": "700", "rax": "708", "dbg": true, "cmd": {"22": "7AEC"}, "freq": 30, "filter": { "years": [2020] },
+  "signals": [
+    {"id": "RX_DEBUG_700_7AEC_B0", "path": "Fuel.Research", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw 700/227AEC byte 0", "description": "Grouped fuel pressure is the source hypothesis. ScanGauge PT-005 defines multiple pressure fields using a C3 filter. Confirm the complete reply and both offsets against 221F6D before applying conversions."}
+  ]},
 { "hdr": "701", "rax": "709", "cmd": {"22": "0103"}, "freq": 10, "filter": { "from": 2016 }, "dbgfilter": { "to": 2016, "years": [2018, 2019, 2021], "from": 2024 },
   "signals": [
     {"id": "RX_ODO_RAW", "path": "Trips", "fmt": {"bix": 8, "len": 24, "max": 16777215, "unit": "scalar" }, "name": "Odometer, in the cluster's unit"},
@@ -227,6 +239,14 @@
 { "hdr": "701", "rax": "709", "cmd": {"22": "1627"}, "freq": 1, "filter": { "from": 2016 }, "dbgfilter": { "to": 2016, "years": [2018, 2019, 2021], "from": 2024 },
   "signals": [
     {"id": "RX_ATF_T_PAN_GEN3", "path": "Transmission", "fmt": { "len": 16, "max": 215, "min": -40, "div": 256, "add": -40, "unit": "celsius" }, "name": "Transmission fluid temperature, pan", "suggestedMetric": "transmissionFluidTemperature"}
+  ]},
+{ "hdr": "701", "rax": "709", "dbg": true, "cmd": {"22": "1AAA"}, "freq": 30, "filter": { "years": [2020] },
+  "signals": [
+    {"id": "RX_DEBUG_701_1AAA_B0", "path": "Transmission.Research", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw 701/221AAA byte 0", "description": "Transmission pan temperature is the source hypothesis. ScanGauge PT-001 lists this request on 701 and also documents a 700 variant. Check the 709 reply and compare with 221627 on this vehicle."}
+  ]},
+{ "hdr": "701", "rax": "709", "dbg": true, "cmd": {"22": "1AC0"}, "freq": 30, "filter": { "years": [2020] },
+  "signals": [
+    {"id": "RX_DEBUG_701_1AC0_B0", "path": "Transmission.Research", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw 701/221AC0 byte 0", "description": "Torque converter temperature is the source hypothesis. ScanGauge PT-002 lists this request on 701 and also documents a 700 variant. Compare the 709 reply with pan temperature and converter lockup state to distinguish the quantities."}
   ]},
 { "hdr": "7B0", "rax": "7B8", "cmd": {"21": "03"}, "freq": 0.25, "dbgfilter": { "to": 2005, "years": [2007, 2008, 2009, 2011, 2012, 2014, 2016, 2018, 2019, 2020, 2021], "from": 2023 },
   "signals": [
